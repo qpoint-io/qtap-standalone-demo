@@ -1,0 +1,16 @@
+# plugin stacks
+stacks:
+  default:
+    plugins:
+      - type: access_logs
+        config:
+          mode: summary
+          format: console
+
+# tap config
+tap:
+  direction: all
+  ignore_loopback: false
+  audit_include_dns: false
+  http:
+    stack: default  

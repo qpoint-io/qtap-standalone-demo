@@ -1,0 +1,18 @@
+### Test ping endpoint
+GET http://localhost:3000/ping
+Accept: text/plain
+
+### Log some data
+POST http://localhost:3000/logs
+Content-Type: application/json
+
+{
+  "message": "This is a test log message",
+  "timestamp": "2025-03-11T17:30:00Z",
+  "level": "info",
+  "service": "test-client"
+}
+
+### Test failure endpoint
+GET http://localhost:3000/fail
+Accept: text/plain
