@@ -1,3 +1,31 @@
+# # plugin stacks
+# stacks:
+#   default:
+#     plugins:
+#       - type: access_logs
+#         config:
+#           # default mode (none, summary, details, full)
+#           mode: summary
+#           # display format (console, json)
+#           format: console
+#           rules:
+#             # ignore sshd docker forwarding
+#             - name: ignore sshd docker forwarding
+#               expr: exe matches |sshd$|
+#               mode: none
+#             # show full details and payloads for example.com
+#             - name: details for example.com
+#               expr: request.host == "example.com"
+#               mode: full
+#             # show all details when not GET
+#             - name: details when not GET
+#               expr: request.method != "GET"
+#               mode: details
+#             # capture details and payloads on errors
+#             - name: full log on errors
+#               expr: response.status > 302
+#               mode: full
+
 # plugin stacks
 stacks:
   default:
@@ -8,23 +36,6 @@ stacks:
           mode: summary
           # display format (console, json)
           format: console
-          rules:
-            # ignore sshd docker forwarding
-            - name: ignore sshd docker forwarding
-              expr: exe matches |sshd$|
-              mode: none
-            # show full details and payloads for example.com
-            - name: details for example.com
-              expr: request.host == "example.com"
-              mode: full
-            # show all details when not GET
-            - name: details when not GET
-              expr: request.method != "GET"
-              mode: details
-            # capture details and payloads on errors
-            - name: full log on errors
-              expr: response.status > 302
-              mode: full
 
 # tap config
 tap:
