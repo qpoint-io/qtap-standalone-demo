@@ -13,8 +13,8 @@ docker run --rm -it \
   -v "$(pwd):/app" \
   -e TINI_SUBREAPER=1 \
   --ulimit=memlock=-1 \
-  us-docker.pkg.dev/qpoint-edge/public/qpoint:sha-6a98472 \
+  us-docker.pkg.dev/qpoint-edge/public/qpoint:sha-7253564 \
   tap \
-  --log-level=debug \
+  --log-level=info \
   --log-encoding=console \
   --config=/app/qtap.yaml

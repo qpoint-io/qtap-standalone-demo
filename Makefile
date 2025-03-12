@@ -17,3 +17,7 @@ build:
 # Run the Docker container
 run:
 	@./scripts/run-server.sh
+
+# Run gohttpbin
+run-gohttpbin:
+	@./scripts/run-gohttpbin.sh
