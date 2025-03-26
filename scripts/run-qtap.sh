@@ -13,7 +13,7 @@ docker run --rm -it \
   -v "$(pwd):/app" \
   -e TINI_SUBREAPER=1 \
   --ulimit=memlock=-1 \
-  us-docker.pkg.dev/qpoint-edge/public/qpoint:sha-7253564 \
+  us-docker.pkg.dev/qpoint-edge/public/qpoint:v0.8 \
   tap \
   --log-level=info \
   --log-encoding=console \
